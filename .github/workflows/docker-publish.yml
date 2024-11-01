@@ -23,8 +23,13 @@ env:
 
 
 jobs:
+  integration:
+    uses: rajnisharora04/demo_container_images/.github/workflows/python-app.yml@main
+    permissions:
+      contents: read
+      
   build:
-
+    needs: [integration]
     runs-on: ubuntu-latest
     permissions:
       contents: read
